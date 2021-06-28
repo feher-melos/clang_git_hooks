@@ -11,7 +11,7 @@
 
 #include "haha.h"
 
-using namespace std;
+using namespace       std;
 
 namespace MyNameSpace
 {
