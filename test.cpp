@@ -164,7 +164,7 @@ void switchCase(int apple)
         cout << "one";
         break;
     default:
-        cout << "default";
+              cout << "default";
         break;
     }
 }
