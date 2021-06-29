@@ -64,26 +64,29 @@ A::A(int a)
     }
 }
 
-struct AppleDevice : public MakarenaDevice, private WindowDevice, protected ShieldDevice
+struct AppleDevice : public MakarenaDevice,
+                     private WindowDevice,
+                     protected ShieldDevice
 {
-    AppleDevice(int apple, std::string banana, std::vector<std::string> strList);
+    AppleDevice(int apple,
+                std::string banana,
+                std::vector<std::string> strList);
     AppleDevice(int a, std::string b);
     int apple;
     std::string banana;
     std::vector<std::string> strList;
 };
 
-AppleDevice::AppleDevice(int apple, std::string banana, std::vector<std::string> strList)
+AppleDevice::AppleDevice(int apple,
+                         std::string banana,
+                         std::vector<std::string> strList)
     : apple{apple},
       banana{banana},
       strList{strList}
 {
 }
 
-AppleDevice::AppleDevice(int a, std::string b)
-    : apple{a},
-      banana{b},
-      strList{}
+AppleDevice::AppleDevice(int a, std::string b) : apple{a}, banana{b}, strList{}
 {
 }
 
@@ -112,32 +115,36 @@ A B::a1{1};
 
 void longFunctionCallLine()
 {
-    thisIsAVeryLongFunctionName(argumentOne, argumentTwo, argumentThree, argumentFour, argumentFive, argumentSix);
+    thisIsAVeryLongFunctionName(argumentOne, argumentTwo, argumentThree,
+                                argumentFour, argumentFive, argumentSix);
 
     thisIsAVeryLongFunctionName(argumentOne, argumentTwo, argumentThree);
 
-    thisIsAVeryLongFunctionName(argumentOne, argumentTwo, argumentThree, argumentFour,
-                                thisIsAVeryLongFunctionName(argumentOne, argumentTwo, argumentThree), argumentSix);
+    thisIsAVeryLongFunctionName(
+            argumentOne, argumentTwo, argumentThree, argumentFour,
+            thisIsAVeryLongFunctionName(argumentOne, argumentTwo,
+                                        argumentThree),
+            argumentSix);
 }
 
 void longExpressions()
 {
-    auto result1 = argumentOne + argumentTwo / argumentThree * argumentFour - argumentFive / argumentSix;
-    auto result2 = argumentOne + argumentTwo == argumentThree * argumentFour && argumentFive / argumentSix != argumentSeven;
+    auto result1 = argumentOne + argumentTwo / argumentThree * argumentFour
+            - argumentFive / argumentSix;
+    auto result2 = argumentOne + argumentTwo == argumentThree * argumentFour
+            && argumentFive / argumentSix != argumentSeven;
 }
 
 void longConditions()
 {
     if (argumentOne + argumentTwo == argumentThree * argumentFour
-        && argumentFive / argumentSix != argumentSeven
-        && (argumentOne % 2) != 0
+        && argumentFive / argumentSix != argumentSeven && (argumentOne % 2) != 0
         && argumentTwo == 4)
     {
         cout << "Hello";
     }
     if (argumentOne + argumentTwo != argumentThree * argumentFour
-        || argumentFive / argumentSix != argumentSeven
-                && argumentOne % 2
+        || argumentFive / argumentSix != argumentSeven && argumentOne % 2
                 && argumentTwo == 4)
     {
         cout << "Hello";
@@ -171,18 +178,22 @@ void switchCase(int apple)
 
 void lambdas()
 {
-    auto lambda1 = []() {
+    auto lambda1 = []()     {
     };
-    auto lambda2 = []() {
-        return true;
+    auto lambda2 = []    ()
+    {
+        return       true;
     };
-    auto lambda3 = [=](float f, int a) {
+    auto lambda3 = [=](float f, int      a)
+    {
         const auto r = f + a;
         return r;
     };
-    functionCallWithLambda([](int a, int b) {
-        return a * b;
-    });
+    functionCallWithLambda(
+            [](int a, int b)
+            {
+                return a * b;
+            });
 }
 
 int main()
