@@ -25,7 +25,7 @@ namespace Inner
 namespace VeryInner
 {
 }
-} // namespace Inner
+} // namespace Innereeeee
 } // namespace Outer
 
 // CompactNamespaces
@@ -47,13 +47,14 @@ public:
 
 A::A(int a)
 {
+
+
     cout << "hello";
-    if (a < 3)
-    {
+    if (a < 3)     {
         cout << "geza" << endl;
     }
-    else
-    {
+
+    else    {
         cout << "hi";
     }
     for (int a = 1; a < 5; ++a)
