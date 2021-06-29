@@ -164,7 +164,7 @@ void switchCase(int apple)
         cout << "one";
         break;
     default:
-              cout << "default";
+        cout << "default";
         break;
     }
 }
@@ -173,17 +173,16 @@ void lambdas()
 {
     auto lambda1 = []() {
     };
-    auto lambda2 = []()
-    {
+    auto lambda2 = []() {
         return true;
     };
     auto lambda3 = [=](float f, int a) {
         const auto r = f + a;
         return r;
     };
-    functionCallWithLambda([](int a, int b)                      {
-                               return a * b;
-                           });
+    functionCallWithLambda([](int a, int b) {
+        return a * b;
+    });
 }
 
 int main()
