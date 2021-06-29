@@ -188,7 +188,7 @@ void lambdas()
     auto lambda3 = [=](     float f, int       a)
     {
         const auto r = f +
-a;
+  a;
         return r;
     };
     functionCallWithLambda(
