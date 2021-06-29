@@ -49,7 +49,7 @@ A::A(int a)
 {
 
 
-    cout << "hello";
+       cout << "hello";
     if (a < 3)     {
         cout << "geza" << endl;
     }
