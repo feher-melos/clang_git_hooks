@@ -190,7 +190,7 @@ void lambdas()
         return r;
     };
     functionCallWithLambda(
-            [](int a, int b)
+            [](int a, int    b)
             {
                 return a * b;
             });
