@@ -184,7 +184,7 @@ void lambdas()
     {
         return       true;
     };
-    auto lambda3 = [=](float    f, int      a)
+    auto lambda3 = [=   ](float    f, int      a)
     {
         const auto r = f + a;
         return r;
