@@ -1,1 +1,4 @@
-static int apple(int a) { return a+1;}
+static int apple(int a)
+{
+    return a + 1;
+}

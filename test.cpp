@@ -178,19 +178,20 @@ void switchCase(int apple)
 
 void lambdas()
 {
-    auto lambda1 = []()     {
-    };
-    auto lambda2 = []    ()
+    auto lambda1 = []()
     {
-        return       true;
     };
-    auto lambda3 = [=   ](float    f, int      a)
+    auto lambda2 = []()
+    {
+        return true;
+    };
+    auto lambda3 = [=](float f, int a)
     {
         const auto r = f + a;
         return r;
     };
     functionCallWithLambda(
-            [](int a, int    b)
+            [](int a, int b)
             {
                 return a * b;
             });
