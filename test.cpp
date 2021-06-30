@@ -86,7 +86,10 @@ AppleDevice::AppleDevice(int apple,
 {
 }
 
-AppleDevice::AppleDevice(int a, std::string b) : apple{a}, banana{b}, strList{}
+AppleDevice::AppleDevice(int a, std::string b)
+    : apple{a},
+      banana{b},
+      strList{}
 {
 }
 
@@ -104,9 +107,7 @@ struct B
     {
         cout << "B" << endl;
     }
-    static A a1;
-    static A a2;
-    static A a3;
+    static A a1;  static A a2; static A a3;
 };
 
 A B::a2{2};
