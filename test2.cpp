@@ -48,7 +48,7 @@ public:
 A::A(    int a){
     cout << "hello";
     if (a < 3)    {
-        cout << "geza" << endl;
+        cout << "geza Bela" << endl;
     }    else    {
         cout << "hi";
     }
