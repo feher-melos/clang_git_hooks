@@ -45,14 +45,19 @@ public:
     A(int a);
 };
 
-A::A(    int a){
+A::A(int a)
+{
     cout << "hello";
-    if (a < 3)    {
+    if (a < 3)
+    {
         cout << "geza Bela" << endl;
-    }    else    {
+    }
+    else
+    {
         cout << "hi";
     }
-    for (int a = 1; a < 5; ++a)    {
+    for (int a = 1; a < 5; ++a)
+    {
         ;
     }
 }
@@ -79,7 +84,10 @@ AppleDevice::AppleDevice(int apple,
 {
 }
 
-AppleDevice::AppleDevice(int a, std::string b) : apple{a}, banana{b}, strList{}
+AppleDevice::AppleDevice(int a, std::string b)
+    : apple{a},
+      banana{b},
+      strList{}
 {
 }
 

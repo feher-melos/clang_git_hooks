@@ -1,0 +1,224 @@
+---
+#
+# This is for clang-format-11 (and newer)
+# https://releases.llvm.org/11.0.0/tools/clang/docs/ClangFormatStyleOptions.html
+#
+
+Language: Cpp
+# BasedOnStyle: Google
+
+DisableFormat: false
+ColumnLimit: 0
+
+#
+# Indentation
+#
+
+IndentWidth: 4
+ContinuationIndentWidth: 8
+ConstructorInitializerIndentWidth: 4
+AccessModifierOffset: -4
+TabWidth: 8
+UseTab: Never
+
+IndentCaseLabels: false
+IndentPPDirectives: None
+IndentWrappedFunctionNames: false
+NamespaceIndentation: None
+
+#
+# Aligment
+#
+
+AlignAfterOpenBracket: Align # Align, DontAlign, AlwaysBreak
+AlignConsecutiveMacros: false
+AlignConsecutiveAssignments: false
+AlignConsecutiveDeclarations: false
+AlignEscapedNewlines: Left
+AlignOperands: false
+AlignTrailingComments: false
+
+ExperimentalAutoDetectBinPacking: false
+BinPackArguments: true
+BinPackParameters: false
+
+DerivePointerAlignment: false
+PointerAlignment: Left
+
+#
+# Spacing
+#
+
+Cpp11BracedListStyle: true
+
+SpaceAfterCStyleCast: false
+SpaceAfterLogicalNot: false
+SpaceAfterTemplateKeyword: false
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCpp11BracedList: false
+SpaceBeforeCtorInitializerColon: true
+SpaceBeforeInheritanceColon: true
+SpaceBeforeParens: ControlStatements
+SpaceBeforeRangeBasedForLoopColon: true
+SpaceInEmptyParentheses: false
+SpacesBeforeTrailingComments: 1
+SpacesInAngles:  false
+SpacesInContainerLiterals: true
+SpacesInCStyleCastParentheses: false
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+
+KeepEmptyLinesAtTheStartOfBlocks: false
+MaxEmptyLinesToKeep: 1
+
+#
+# Breaks
+#
+
+AllowShortBlocksOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: None
+AllowShortLambdasOnASingleLine: None # All, None, Empty, Inline
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+
+AlwaysBreakAfterDefinitionReturnType: None
+AlwaysBreakAfterReturnType: None
+AlwaysBreakBeforeMultilineStrings: true
+AlwaysBreakTemplateDeclarations: Yes
+
+#BreakConstructorInitializersBeforeComma: false
+BreakConstructorInitializers: BeforeColon
+
+BreakBeforeBraces: Custom # Attach, Allman, Custom
+BraceWrapping:
+  AfterCaseLabel:  true
+  AfterClass:      true
+  AfterControlStatement: true
+  AfterEnum:       true
+  AfterFunction:   true
+  AfterNamespace:  true
+  AfterObjCDeclaration: true
+  AfterStruct:     true
+  AfterUnion:      true
+  AfterExternBlock: true
+  BeforeCatch:     true
+  BeforeElse:      true
+  BeforeLambdaBody: true # Available from clang 11
+  IndentBraces:    false
+  SplitEmptyFunction: true
+  SplitEmptyRecord: true
+  SplitEmptyNamespace: true
+BreakAfterJavaFieldAnnotations: false
+
+#
+# Includes
+#
+
+IncludeBlocks:   Regroup
+IncludeCategories:
+  # System headers with .h
+  - Regex:           '^<.*\.h>'
+    Priority:        1
+  # System headers without .h
+  - Regex:           '^<.*'
+    Priority:        2
+  # Everything else
+  - Regex:           '.*'
+    Priority:        3
+IncludeIsMainRegex: '([-_](test|unittest))?$'
+
+SortIncludes:    true
+SortUsingDeclarations: true
+
+########################################
+#
+# Line wrapping
+#
+
+# These are only active if ColumnLimit is not 0.
+
+BreakBeforeTernaryOperators: true
+BreakBeforeBinaryOperators: NonAssignment
+#BreakBeforeInheritanceComma: false
+BreakInheritanceList: BeforeColon # BeforeColon does not seem to work
+BreakStringLiterals: true
+
+AllowAllArgumentsOnNextLine: true
+AllowAllConstructorInitializersOnNextLine: false
+AllowAllParametersOfDeclarationOnNextLine: false
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+
+CompactNamespaces: false
+
+PenaltyBreakAssignment: 2
+PenaltyBreakBeforeFirstCallParameter: 1
+PenaltyBreakComment: 300
+PenaltyBreakFirstLessLess: 120
+PenaltyBreakString: 1000
+PenaltyBreakTemplateDeclaration: 10
+PenaltyExcessCharacter: 1000000
+PenaltyReturnTypeOnItsOwnLine: 200
+
+########################################
+#
+# Others
+#
+
+CommentPragmas:  '^ IWYU pragma:'
+FixNamespaceComments: true
+
+ForEachMacros:
+  - foreach
+  - Q_FOREACH
+  - BOOST_FOREACH
+
+StatementMacros:
+  - Q_UNUSED
+  - QT_REQUIRE_VERSION
+
+MacroBlockBegin: ''
+MacroBlockEnd:   ''
+
+# This is used usually by code generators. It formats
+# code inside raw string literals.
+RawStringFormats:
+  - Language:        Cpp
+    Delimiters:
+      - cc
+      - CC
+      - cpp
+      - Cpp
+      - CPP
+      - 'c++'
+      - 'C++'
+    CanonicalDelimiter: ''
+    BasedOnStyle:    google
+  - Language:        TextProto
+    Delimiters:
+      - pb
+      - PB
+      - proto
+      - PROTO
+    EnclosingFunctions:
+      - EqualsProto
+      - EquivToProto
+      - PARSE_PARTIAL_TEXT_PROTO
+      - PARSE_TEST_PROTO
+      - PARSE_TEXT_PROTO
+      - ParseTextOrDie
+      - ParseTextProtoOrDie
+    CanonicalDelimiter: ''
+    BasedOnStyle:    google
+
+ReflowComments:  true
+Standard:        Auto
+
+JavaScriptQuotes: Leave
+JavaScriptWrapImports: true
+
+ObjCBinPackProtocolList: Never
+ObjCBlockIndentWidth: 4
+ObjCSpaceAfterProperty: false
+ObjCSpaceBeforeProtocolList: true
+...

@@ -107,7 +107,9 @@ struct B
     {
         cout << "B" << endl;
     }
-    static A a1;  static A a2; static A a3;
+    static A a1;
+    static A a2;
+    static A a3;
 };
 
 A B::a2{2};
@@ -186,7 +188,8 @@ void lambdas()
     {
         return true;
     };
-    auto lambda3 = [=](float f, int a) {
+    auto lambda3 = [=](float f, int a)
+    {
         const auto r = f + a;
         return r;
     };
